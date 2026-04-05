@@ -32,23 +32,6 @@ export const productsApi = createApi({
       }),
       invalidatesTags: ['Products'],
     }),
-
-    // update: builder.mutation<IProduct, { id: string; body: Partial<IProductRec> }>({
-    //   query: ({ id, body }) => ({
-    //     url: `/products/${id}`,
-    //     method: 'PUT',
-    //     body,
-    //   }),
-    //   invalidatesTags: ['Products'],
-    // }),
-
-    // delete: builder.mutation<void, string>({
-    //   query: (id) => ({
-    //     url: `/products/${id}`,
-    //     method: 'DELETE',
-    //   }),
-    //   invalidatesTags: ['Products'],
-    // }),
   }),
 })
 

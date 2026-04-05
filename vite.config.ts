@@ -28,14 +28,12 @@ export default defineConfig(({ mode }) => {
     server: {
       proxy: {
         [env.VITE_BACKEND_ENDPOINT]: {
-          target: env.VITE_BACKEND, // ваш реальный backend URL
+          target: env.VITE_BACKEND,
           changeOrigin: true,
-          secure: false, // для http
+          secure: false,
           rewrite: (path) => path.replace(new RegExp(`^\\${env.VITE_BACKEND_ENDPOINT}`), ''),
         },
       },
     },
   }
 })
-
-// export default defineConfig()

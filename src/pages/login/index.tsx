@@ -1,4 +1,3 @@
-// pages/Login.tsx
 import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
@@ -13,7 +12,6 @@ import type { RootState, AppDispatch } from '@/features/store'
 import { setRemember } from '@/features/root/rootSlice'
 import { useAuth } from '@/features/auth/authHook'
 
-// import { ThemeSwitcher } from '@/shared/components/ThemeSwitcher'
 import { RCheckbox } from '@/shared/controls/RCheckbox'
 
 import { type IAuthRec, AUTH_REC, AUTH_LOGIN_EXP_MINS } from '@/entities/auth'
@@ -22,9 +20,8 @@ export const LoginPage: React.FC = () => {
   const navigate = useNavigate()
   const dispatch = useDispatch<AppDispatch>()
 
-  // const auth = useSelector((state: RootState) => state.auth)
   const root = useSelector((state: RootState) => state.root)
-  const { login, isLoading /** logout **/ } = useAuth()
+  const { login, isLoading } = useAuth()
 
   const [credentials, setCredentials] = useState<IAuthRec>(AUTH_REC)
   const [showPassword, setShowPassword] = useState(false)
@@ -42,10 +39,6 @@ export const LoginPage: React.FC = () => {
   const onLoginByEnter = async (e?: React.KeyboardEvent<HTMLInputElement>) => {
     if (e?.key === 'Enter') onLogin()
   }
-
-  // const onLogout = async () => {
-  //   dispatch(logout())
-  // }
 
   useEffect(() => {
     console.log('MOUNTED')
@@ -152,11 +145,6 @@ export const LoginPage: React.FC = () => {
             </div>
           </div>
         </div>
-
-        {/* <div>
-          <button onClick={onLogout}>ВЫХОД</button>
-          <ThemeSwitcher />
-        </div> */}
       </div>
 
       <div id="toast-container" className="toast toast-end z-50" />

@@ -23,21 +23,6 @@
     'wght' 100--900;
 }
 
-/* Настройка тем */
-/* @plugin "daisyui" {
-  themes:
-    [ 'light',
-    'dark',
-    'cupcake',
-    ];
-} */
-
-/* @plugin "daisyui" {
-  themes:
-    [ 'light',
-    'dark'];
-} */
-
 @plugin "daisyui" {
   themes:
     [ 'light --default',

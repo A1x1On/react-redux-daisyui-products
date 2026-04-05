@@ -1,4 +1,8 @@
 declare global {
+  type TProtectedRouteProps = {
+    redirectPath?: string
+  }
+
   interface IPropsDialog {
     show: boolean
     setShow: React.Dispatch<React.SetStateAction<boolean>>

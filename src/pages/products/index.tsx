@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState, useCallback, lazy, Suspense } from 'react'
-import { /** useDispatch, **/ useSelector } from 'react-redux'
+import { useSelector } from 'react-redux'
 
 import clsx from 'clsx'
 import styles from './index.module.scss'
@@ -8,14 +8,12 @@ import { formatMoneyByParts, showToast } from '@/utils/general'
 
 import { useAuth } from '@/features/auth/authHook'
 import { useProducts } from '@/features/products/productsHook'
-// import { setData } from '@/features/products/productsSlice'
 
 import { RCheckbox } from '@/shared/controls/RCheckbox'
 
 import { List } from '@/shared/components/List'
 import list from '@/shared/components/List/index.module.scss'
 
-// import { DialogCreate } from './create'
 const DialogCreate = lazy(() => import('./create'))
 
 import type { RootState /** AppDispatch **/ } from '@/features/store'
@@ -31,17 +29,13 @@ const PAGE_SIZE = 5
 const PAGE = 1
 
 const Products = () => {
-  // const dispatch = useDispatch<AppDispatch>()
-  const { getMe /** logout **/ } = useAuth()
+  const { getMe } = useAuth()
   const { fetch, search, create, isLoading, data, dataSearch } = useProducts()
 
   const productsState = useSelector((state: RootState) => state.products)
 
-  // const [isLoading, setIsLoading] = useState(false)
   const [isSelectAll, setIsSelectAll] = useState(false)
-
   const [page, setPage] = useState(PAGE)
-
   const [selectedItems, setSelectedItems] = useState<Set<number>>(new Set())
 
   const [descriptionSearch, setDescriptionSearch] = useState<string | undefined>()
@@ -58,14 +52,6 @@ const Products = () => {
     setPage(PAGE)
   }
 
-  // const onLogout = async () => {
-  //   dispatch(logout())
-  // }
-
-  // const onListChanged = (values: number[]) => {
-  //   console.log('values: ', values)
-  // }
-
   const getMappedPrice = useCallback((data: number) => formatMoneyByParts(data), [])
 
   const onShowCreation = () => setShowCreation(true)
@@ -81,7 +67,6 @@ const Products = () => {
   }, [selectedItems])
 
   useEffect(() => {
-    // console.log('productsState.lastFetchType', productsState.lastFetchType)
     if (descriptionSearch === undefined) return
 
     const t = setTimeout(() => {
@@ -196,14 +181,11 @@ const Products = () => {
           pageSize={PAGE_SIZE}
           isLoading={isLoading}
           isSelectAll={isSelectAll}
-          // setIsLoading={setIsLoading}
           setIsSelectAll={setIsSelectAll}
           setSelectedItems={setSelectedItems}
           setPage={setPage}
-          // onChanged={onListChanged}
           sorting={sorting}
           setSorting={setSorting}
-          // onSortChanged={onSort}
           renderItem={(item, { isSelected, toggleItem }) => (
             <div
               className={clsx(
@@ -263,20 +245,6 @@ const Products = () => {
       <Suspense fallback={<span className="loading loading-spinner loading-md" />}>
         {showCreation && <DialogCreate show={showCreation} setShow={setShowCreation} onChanged={onCreate} />}
       </Suspense>
-
-      {/* <div>
-        <h1>Катало!!г</h1>
-        <ul>
-          {items.map((id) => (
-            <li key={id}>
-              <Link to={`/catalog/${id}`}>Товар {id}</Link>
-            </li>
-          ))}
-        </ul>
-
-        <br></br>
-        <button onClick={onLogout}>ВЫХОД</button>
-      </div> */}
     </div>
   )
 }

@@ -19,18 +19,8 @@ a:hover {
 html,
 body,
 #root {
-  // margin: 0;
-  // display: flex;
-  // place-items: center;
-  // min-width: 320px;
-  // min-height: 100vh;
   height: 100%;
 }
-
-// h1 {
-//   font-size: 3.2em;
-//   line-height: 1.1;
-// }
 
 .disabled {
   color: var(--disabled-color);
@@ -41,10 +31,10 @@ body,
   font-size: var(--fs-title);
 }
 .fs-title-2 {
-  font-size: var(--fs-title-2); // 24px
-  line-height: 1.2; // Как в Figma Auto
-  font-weight: 450; // Вместо 500 (Figma тоньше)
-  letter-spacing: -0.02em; // Опционально
+  font-size: var(--fs-title-2);
+  line-height: 1.2; // Figma size Auto
+  font-weight: 450; // instead 500 (Figma less)
+  letter-spacing: -0.02em;
 }
 .fs-title-3 {
   font-size: var(--fs-title-3);

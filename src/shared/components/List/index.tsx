@@ -1,4 +1,4 @@
-import { useEffect, Fragment } from 'react'
+import { Fragment } from 'react'
 
 import clsx from 'clsx'
 import styles from '@/shared/components/List/index.module.scss'
@@ -15,7 +15,6 @@ interface IPropsComponent<T> {
   sorting: ISorting[]
   isLoading: boolean
   isSelectAll: boolean
-  //   setIsLoading: React.Dispatch<React.SetStateAction<boolean>>
   setSorting: React.Dispatch<React.SetStateAction<ISorting[]>>
   setIsSelectAll: React.Dispatch<React.SetStateAction<boolean>>
   setSelectedItems: React.Dispatch<React.SetStateAction<Set<number>>>
@@ -40,26 +39,17 @@ export const List = <T extends { id: number }>({
   sorting,
   isLoading,
   isSelectAll,
-  //   setIsLoading,
   setSorting,
   setIsSelectAll,
   setSelectedItems,
   setPage,
   onChanged,
-  //   onSortChanged,
   renderItem,
 }: IPropsComponent<T>) => {
   const totalPages = Math.ceil(items.length / pageSize)
   const startIndex = (page - 1) * pageSize
   const lastIndex = startIndex + pageSize
   const itemsPerPage = items.slice(startIndex, lastIndex)
-
-  useEffect(() => {
-    // setIsLoading(true)
-    setTimeout(() => {
-      //   setIsLoading(false)
-    }, 1000)
-  }, [])
 
   const onToggleItem = (id: number) => {
     setSelectedItems((ids: Set<number>) => {
