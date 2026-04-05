@@ -1,0 +1,38 @@
+.filter {
+  &__Search {
+    min-height: 105px;
+    &__field {
+      max-width: 1023px;
+    }
+  }
+}
+
+.list {
+  &__row {
+    &__selected {
+      border-left: 3px solid var(--bg-color-5);
+    }
+
+    &__title {
+      &__pic {
+        height: 48px;
+        width: 48px;
+        background-color: var(--bg-color-6);
+        border: 1px solid var(--border-color-2);
+        border-radius: var(--border-radius);
+        margin-right: 18px;
+        float: left;
+      }
+
+      &__text {
+        font-size: var(--fs-text-2);
+        font-weight: bold;
+      }
+
+      &__sub {
+        font-size: var(--fs-text-3);
+        color: var(--text-color-3);
+      }
+    }
+  }
+}

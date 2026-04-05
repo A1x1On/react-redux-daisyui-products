@@ -1,0 +1,118 @@
+.list {
+  padding: 30px;
+
+  &__headers {
+    font-size: 16px;
+    font-weight: bold;
+    color: var(--text-color-3);
+
+    &__header {
+      border-bottom: 1px solid var(--border-color-3);
+      padding: 25px 9px;
+
+      &__col {
+        display: flex;
+        align-items: center;
+        align-content: center;
+
+        padding: 0px 9px;
+      }
+    }
+  }
+
+  &__items {
+    font-size: 16px;
+
+    &__item {
+      padding: 10px 9px;
+      border-bottom: 1px solid var(--border-color-3);
+      border-left: 3px solid var(--bg-color-light);
+
+      &__col {
+        display: flex;
+        align-items: center;
+        align-content: center;
+
+        padding: 0px 9px;
+      }
+    }
+  }
+
+  &__pagination {
+    margin-top: 55px;
+    min-height: 30px;
+
+    &__info {
+      display: flex;
+      align-items: center;
+      align-content: center;
+      font-size: 16px;
+
+      &__text {
+        color: var(--text-color-3);
+      }
+    }
+
+    &__paging {
+      display: flex;
+      justify-content: flex-end;
+
+      &__items {
+        display: flex;
+        justify-content: center;
+
+        &__item {
+          display: flex;
+          align-items: center;
+          align-content: center;
+          justify-content: center;
+          font-size: 14px;
+          width: 30px;
+          height: 30px;
+          margin: 0px 4px;
+          border: 1px solid var(--border-color-2);
+          border-radius: var(--border-radius-3);
+          color: var(--text-color-3);
+          background-color: var(--bg-color-light);
+          cursor: pointer;
+
+          &:hover {
+            opacity: 0.6;
+          }
+
+          &--active {
+            color: var(--text-color-light);
+            background-color: var(--bg-color-4);
+          }
+        }
+
+        &__left-item,
+        &__right-item {
+          display: flex;
+          align-items: center;
+          align-content: center;
+          width: 30px;
+          height: 30px;
+          margin: 0px 6px;
+          cursor: pointer;
+          background-repeat: no-repeat;
+          background-position: center;
+
+          &:hover {
+            opacity: 0.6;
+          }
+        }
+
+        &__left-item {
+          background-image: url(./src/assets/icons/caret-left.svg);
+          margin-left: 0px;
+        }
+
+        &__right-item {
+          background-image: url(./src/assets/icons/caret-right.svg);
+          margin-right: 0px;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,22 @@
+.rCheckbox {
+  cursor: pointer;
+
+  .block {
+    width: 22px;
+    height: 22px;
+    border: 2px solid var(--border-color-2);
+    border-radius: var(--border-radius-3);
+    transition-property: all;
+    transition-duration: 200ms;
+  }
+}
+
+.rCheckbox:has(input:checked) .block {
+  background: var(--bg-color-5);
+  border-color: var(--bg-color-5);
+}
+
+input:checked + .block {
+  background: var(--bg-color-5);
+  border-color: var(--bg-color-5);
+}

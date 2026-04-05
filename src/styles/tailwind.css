@@ -1,0 +1,77 @@
+@import 'tailwindcss';
+@plugin "daisyui";
+
+@font-face {
+  font-family: 'Inter';
+  src: url('@/public/fonts/Inter-VariableFont_opsz,wght.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+  font-variation-settings:
+    'opsz' 14--64,
+    'wght' 100--900;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('@/public/fonts/Inter-Italic-VariableFont_opsz,wght.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: italic;
+  font-display: swap;
+  font-variation-settings:
+    'opsz' 14--64,
+    'wght' 100--900;
+}
+
+/* Настройка тем */
+/* @plugin "daisyui" {
+  themes:
+    [ 'light',
+    'dark',
+    'cupcake',
+    ];
+} */
+
+/* @plugin "daisyui" {
+  themes:
+    [ 'light',
+    'dark'];
+} */
+
+@plugin "daisyui" {
+  themes:
+    [ 'light --default',
+    'dark --prefersdark'];
+}
+
+/* @plugin "daisyui/theme" {
+  name: 'light';
+  default: true;
+
+  --color-primary: #3b82f6;
+  --color-primary-content: #ffffff;
+} */
+
+@layer utilities {
+  [data-theme='light'] {
+    --color-base-100: var(--bg-color-2);
+    --color-base-200: var(--bg-color-3);
+    --color-base-300: var(--bg-color);
+
+    --color-primary: var(--color-primary);
+  }
+}
+
+/* @layer base {
+  [data-theme='light'] {
+    --color-base-100: blue;
+    --color-base-200: blue;
+    --color-base-300: blue;
+  }
+
+  [data-theme='dark'] {
+    --color-base-100: #f8fafc;
+    --color-base-200: #e2e8f0;
+    --color-base-300: #cbd5e1;
+  }
+} */

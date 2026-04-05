@@ -1,0 +1,63 @@
+:root {
+  // line-height: 1.5;
+  // font-weight: 400;
+
+  // color-scheme: light dark;
+
+  // background-color: #242424;
+
+  --font-inter: 'Inter', sans-serif;
+
+  --login-text-color-1: rgba(35, 35, 35, 1);
+  --login-text-color-2: rgba(224, 224, 224, 1);
+  --login-text-color-3: rgba(156, 156, 156, 1);
+  --login-text-color-4: rgba(235, 235, 235, 1);
+  --login-text-color-5: rgba(108, 108, 108, 1);
+  --login-border-color-1: rgba(237, 237, 237, 1);
+
+  --color-primary: #242edb;
+  --text-color-2: #999999;
+  --text-color-3: #b2b3b9;
+  --text-color-4: #a5a5a5;
+  --text-color-light: #fff;
+  --text-color-dark: #000;
+
+  --link-color: #2e72b0;
+  --link-color-2: #000;
+  --disabled-color: #ccc;
+
+  --bg-color: #202020;
+  --bg-color-2: #f3f3f3;
+  --bg-color-3: #cdcdcd;
+  --bg-color-4: #797fea;
+  --bg-color-5: #3c538e;
+  --bg-color-6: #c4c4c4;
+  --bg-color-light: #fff;
+  --bg-color-dark: #000;
+
+  --gradient-color: linear-gradient(0deg, rgba(112, 162, 205, 1) 0%, rgba(39, 103, 167, 1) 100%);
+
+  --border-color: #ccc;
+  --border-color-2: #ececeb;
+  --border-color-3: #e2e2e2;
+  --border-color-light: #fff;
+  --border-color-dark: #000;
+
+  --shadow-color: #111;
+
+  --border-radius: 8px;
+  --border-radius-2: 6px;
+  --border-radius-3: 4px;
+  --border-radius-4: 12px;
+
+  --fs-title: 28px;
+  --fs-title-2: 24px; //////
+  --fs-title-3: 20px;
+  --fs-text: 18px;
+  --fs-text-2: 16px;
+  --fs-text-3: 14px;
+  --fs-text-4: 10px;
+  --fs-text-5: 9px;
+
+  --line-height: 20px;
+}
