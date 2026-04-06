@@ -59,7 +59,7 @@ export const LoginPage: React.FC = () => {
               </label>
 
               <div className="relative">
-                <img className={clsx(styles.loginFormIconUser)} src="./public/icons/user.svg" />
+                <img className={clsx(styles.loginFormIconUser)} src="/icons/user.svg" />
 
                 <input
                   className="input-md input-bordered w-full pl-12 pr-12"
@@ -76,7 +76,7 @@ export const LoginPage: React.FC = () => {
                     className={clsx(styles.loginFormInputClear)}
                     onClick={() => setCredentials((prev) => ({ ...prev, username: '' }))}
                   >
-                    <img src="./public/icons/cross.svg" />
+                    <img src="/icons/cross.svg" />
                   </button>
                 )}
               </div>
@@ -88,7 +88,7 @@ export const LoginPage: React.FC = () => {
               </label>
 
               <div className="relative">
-                <img className={clsx(styles.loginFormIconLock)} src="./public/icons/lock.svg" />
+                <img className={clsx(styles.loginFormIconLock)} src="/icons/lock.svg" />
 
                 <input
                   className="input-md input-bordered w-full pl-12 pr-12"
@@ -107,7 +107,7 @@ export const LoginPage: React.FC = () => {
                   {showPassword ? (
                     <EyeIcon className="w-5 h-5" />
                   ) : (
-                    <img className="w-5 h-5" src="./public/icons/eye-off.svg" />
+                    <img className="w-5 h-5" src="/icons/eye-off.svg" />
                   )}
                 </button>
               </div>

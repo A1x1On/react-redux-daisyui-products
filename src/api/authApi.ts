@@ -11,7 +11,7 @@ export const authApi = createApi({
   endpoints: (builder) => ({
     login: builder.mutation<IAuth, IAuthRec>({
       query: (body: IAuthRec) => ({
-        url: '/login',
+        url: '/auth/login',
         method: 'POST',
         body,
       }),
@@ -20,7 +20,7 @@ export const authApi = createApi({
 
     refresh: builder.mutation<IAuthToken, IAuthTokenRec>({
       query: (body: IAuthTokenRec) => ({
-        url: '/refresh',
+        url: '/auth/refresh',
         method: 'POST',
         body,
       }),
@@ -29,7 +29,7 @@ export const authApi = createApi({
 
     me: builder.query<IAuth, void>({
       query: () => ({
-        url: '/me',
+        url: '/auth/me',
         method: 'GET',
       }),
       providesTags: ['Auth'],

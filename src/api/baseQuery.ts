@@ -10,7 +10,7 @@ import { authApi } from '@/api/authApi'
 import { router } from '@/app/router'
 import { AUTH_REFRESH_EXP_MINS } from '@/entities/auth'
 
-const BASE_URL = `backend/auth`
+const BASE_URL = import.meta.env.PROD ? import.meta.env.VITE_BACKEND : import.meta.env.VITE_BACKEND_ENDPOINT
 
 const rawBaseQuery = fetchBaseQuery({
   baseUrl: BASE_URL,
