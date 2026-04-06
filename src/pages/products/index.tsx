@@ -139,7 +139,7 @@ const Products = () => {
 
           <div className="col-span-10 flex items-center">
             <label className={clsx(styles.filterSearchField, 'input m-auto')}>
-              <img src="./src/assets/icons/search.svg" alt="Поиск" />
+              <img src="./public/icons/search.svg" alt="Поиск" />
               <input
                 type="search"
                 required
@@ -163,11 +163,11 @@ const Products = () => {
 
           <div className="col-span-3 px-7 flex items-center justify-end ">
             <button className="btn btn-square btn-outline mr-3" onClick={onRefresh}>
-              <img src="./src/assets/icons/arrows-clockwise.svg" alt="Re" />
+              <img src="./public/icons/arrows-clockwise.svg" alt="Re" />
             </button>
 
             <button className="btn btn-primary" onClick={onShowCreation}>
-              <img src="./src/assets/icons/plus-outline.svg" alt="Добавить" />
+              <img src="./public/icons/plus-outline.svg" alt="Добавить" />
               Добавить
             </button>
           </div>
@@ -201,7 +201,7 @@ const Products = () => {
               <div className={clsx(list.listItemsItemCol, 'col-span-4')}>
                 <div className="float-left, w-100">
                   <div className={clsx([list.listItemsItemCol, styles.listRowTitlePic], 'col-span-4')}>
-                    <img className="w-100" src="./src/assets/icons/search.svg" alt="Добавить" />
+                    <img className="w-100" src="./public/icons/search.svg" alt="Добавить" />
                   </div>
 
                   <div className="flex flex-col">
@@ -228,11 +228,11 @@ const Products = () => {
 
               <div className={clsx(list.listItemsItemCol, 'col-span-3 justify-center')}>
                 <button className="btn btn-mini btn-square btn-primary mr-3">
-                  <img src="./src/assets/icons/plus.svg" alt="Re" />
+                  <img src="./public/icons/plus.svg" alt="Re" />
                 </button>
 
                 <button className="btn btn-circle btn-outline border-none bg-inherit hover-opacity">
-                  <img src="./src/assets/icons/dots-three-circle.svg" alt="Re" />
+                  <img src="./public/icons/dots-three-circle.svg" alt="Re" />
                 </button>
               </div>
             </div>
