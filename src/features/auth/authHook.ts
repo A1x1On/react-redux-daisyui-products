@@ -1,11 +1,11 @@
 import { useCallback } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 
-import { setData, logout, setToken } from '@/features/auth/authSlice'
+import { setData as setDataAction, logout as logoutAction, setToken } from '@/features/auth/authSlice'
 import { useLoginMutation, useRefreshMutation, useLazyMeQuery } from '@/api/authApi'
 import type { RootState } from '@/features/store'
 
-import type { IAuthRec, IAuthTokenRec } from '@/entities/auth'
+import type { IAuthRec, IAuthTokenRec, IAuth } from '@/entities/auth'
 
 export const useAuth = () => {
   const dispatch = useDispatch()
@@ -21,13 +21,24 @@ export const useAuth = () => {
         const response = await authLogin(record).unwrap()
 
         dispatch(setToken(response))
-        dispatch(setData(response))
+        dispatch(setDataAction(response))
       } catch (error) {
         console.error('Login error:', error)
         throw error
       }
     },
     [dispatch, authLogin]
+  )
+
+  const logout = useCallback(() => {
+    dispatch(logoutAction())
+  }, [dispatch])
+
+  const setData = useCallback(
+    (data: IAuth) => {
+      dispatch(setDataAction(data))
+    },
+    [dispatch]
   )
 
   const refresh = useCallback(
